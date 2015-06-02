@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class BinaryString {
 	private char[] bits;
-
+// prueba binary
 	public BinaryString(int numberOfbits) {
 		bits = new char[numberOfbits];
 
