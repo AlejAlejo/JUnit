@@ -32,9 +32,12 @@ public class BinaryString {
 	}
 
 	public char get(int index) {
+	try{
 		return bits[index];
+	}catch (RuntimeException e) {
+		throw new BinaryStringException();
 	}
-
+}
 	public String toString() {
 		String result = " ";
 
