@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class BinaryString {
 	private char[] bits;
-// prueba binary
+	// prueba binary
 	public BinaryString(int numberOfbits) {
 		bits = new char[numberOfbits];
 
@@ -28,16 +28,20 @@ public class BinaryString {
 	}
 
 	public void set(int index, char value) {
+	try{
 		bits[index] = value;
+	}catch(RuntimeException e){
+		throw new BinaryStringException();
+	}
 	}
 
 	public char get(int index) {
-	try{
-		return bits[index];
-	}catch (RuntimeException e) {
-		throw new BinaryStringException();
+		try{
+			return bits[index];
+		}catch (RuntimeException e) {
+			throw new BinaryStringException();
+		}
 	}
-}
 	public String toString() {
 		String result = " ";
 
