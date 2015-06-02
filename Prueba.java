@@ -22,15 +22,19 @@ public class Prueba {
 	public void testGetOutOfLimitBitv2(){
 		try{
 			bitset4.set(56, '0');
-		
-		fail("Se esp	eraba excepción de BinaryStringException");
-	} catch(BinaryStringException e){	
-	}}
+
+			fail("Se esperaba excepción de BinaryStringException");
+		} catch(BinaryStringException e){	
+		}}
 	public void testlength(){
 		assertEquals(10, bitset1.length());
 		assertEquals(10, bitset2.length());
 
 	}
+	public void 	tesInvalidBitValue(){
+			bitset4.set(1,'a');
+	}
+	
 	public void testSetBit(){
 		bitset3.set(1,'1');
 		assertEquals('1',bitset3.get(1));

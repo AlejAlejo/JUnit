@@ -28,30 +28,35 @@ public class BinaryString {
 	}
 
 	public void set(int index, char value) {
-	try{
-		bits[index] = value;
-	}catch(RuntimeException e){
-		throw new BinaryStringException();
-	}
-	}
-
-	public char get(int index) {
 		try{
-			return bits[index];
-		}catch (RuntimeException e) {
+			if (value == 'i' || value  == '0'){
+				bits[index] = value;
+		
+		}else{ throw new BinaryStringException();
+			}
+			}
+		catch(RuntimeException e){
 			throw new BinaryStringException();
 		}
-	}
-	public String toString() {
-		String result = " ";
+			}
 
-		for (int i = 0; i < bits.length; i++) {
-			if (bits[i] == '1') {
-				result += "1";
-			} else {
-				result += 0;
+			public char get(int index) {
+				try{
+					return bits[index];
+				}catch (RuntimeException e) {
+					throw new BinaryStringException();
+				}
+			}
+			public String toString() {
+				String result = " ";
+
+				for (int i = 0; i < bits.length; i++) {
+					if (bits[i] == '1') {
+						result += "1";
+					} else {
+						result += 0;
+					}
+				}
+				return result;
 			}
 		}
-		return result;
-	}
-}
